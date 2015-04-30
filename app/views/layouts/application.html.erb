@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>KitchnKit</title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,17 +11,18 @@
     <div class="container">
       <nav>
         <div class="navbar-header">
-          <%= link_to "KitchnKit", '#', id: "logo", class: "navbar-brand" %>
+          <%= link_to "KitchnKit", "#", id: "logo", class: "navbar-brand" %>
         </div>
         <ul class="nav navbar-nav">
-          <li class="<%= "active" if yield(:tab) == 'home' %>"><%= link_to "Home", root_path %></li>
-          <li class="<%= "active" if yield(:tab) == 'recipes' %>"><%= link_to "Recipes", recipes_path %></li>
+          <li class="<%= set_active_tab("Home", yield(:title)) %>"><%= link_to "Home", root_path %></li>
+          <li class="<%= set_active_tab("Recipes", yield(:title)) %>"><%= link_to "Recipes", recipes_path %></li>
+          <li class="<%= set_active_tab("About", yield(:title)) %>"><%= link_to "About", about_path %></li>
         </ul>
       </nav>
     </div>
-</header>
-	<div class="container">
-		<%= yield %>
-	</div>
+  </header>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
