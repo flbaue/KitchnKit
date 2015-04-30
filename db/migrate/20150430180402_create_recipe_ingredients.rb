@@ -4,6 +4,9 @@ class CreateRecipeIngredients < ActiveRecord::Migration
       t.float :amount
       t.string :unit
 
+      t.belongs_to :recipe, index: true
+      t.belongs_to :ingredient, index: true
+
       t.timestamps null: false
     end
   end
