@@ -7,19 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
+  <header class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <nav>
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">KitchenKit</a>
+          <%= link_to "KitchnKit", '#', id: "logo", class: "navbar-brand" %>
         </div>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-      </div>
-    </nav>
-	
+        <ul class="nav navbar-nav">
+          <li class="<%= "active" if yield(:tab) == 'home' %>"><%= link_to "Home", root_path %></li>
+          <li class="<%= "active" if yield(:tab) == 'recipes' %>"><%= link_to "Recipes", recipes_path %></li>
+        </ul>
+      </nav>
+    </div>
+</header>
 	<div class="container">
 		<%= yield %>
 	</div>

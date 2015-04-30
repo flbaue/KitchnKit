@@ -1,0 +1,14 @@
+<% provide(:tab, "recipes") %>
+<h1>Recipes</h1>
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+
+<% @recipes.each do |recipe| %>
+  <tr>
+    <td><%= recipe.title %></td>
+  </tr>
+<% end %>
+
+</table>
