@@ -1,6 +1,6 @@
-README
+# README
 
-
-Tests
-
+## Tests
+```
 bundle exec rake test
+```
