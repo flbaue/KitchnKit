@@ -1,7 +1,20 @@
 <% provide(:tab, "Recipes") %>
 <% provide(:title,  @recipe.title) %>
 <h1 class="page-header"><%= @recipe.title %></h1>
-<blockquote>
-  <p><%= @recipe.description %></p>
-</blockquote>
+
+<div>
+<div class="ingredients">
+  <blockquote>
+    <% @recipe.recipe_ingredients.each do |ingredient| %>
+    <%= ingredient.amount %>
+    <%= ingredient.unit %>
+    <%= ingredient.ingredient.name %>
+    <% end %>
+  </blockquote>
+</div>
+
+<div class="description"
+<p><%= @recipe.description %></p>
+</div>
+</div>
 <%= link_to "Back", recipes_path %>
