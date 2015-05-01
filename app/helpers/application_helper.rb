@@ -11,7 +11,6 @@ module ApplicationHelper
   end
 
   def set_active_tab(name, open_tab)
-    puts "#{name} == #{open_tab}"
     if name == open_tab
       "active"
     else
