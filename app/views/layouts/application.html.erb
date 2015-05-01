@@ -14,9 +14,9 @@
           <%= link_to "KitchnKit", "#", id: "logo", class: "navbar-brand" %>
         </div>
         <ul class="nav navbar-nav">
-          <li class="<%= set_active_tab("Home", yield(:title)) %>"><%= link_to "Home", root_path %></li>
-          <li class="<%= set_active_tab("Recipes", yield(:title)) %>"><%= link_to "Recipes", recipes_path %></li>
-          <li class="<%= set_active_tab("About", yield(:title)) %>"><%= link_to "About", about_path %></li>
+          <li class="<%= set_active_tab("Home", yield(:tab)) %>"><%= link_to "Home", root_path %></li>
+          <li class="<%= set_active_tab("Recipes", yield(:tab)) %>"><%= link_to "Recipes", recipes_path %></li>
+          <li class="<%= set_active_tab("About", yield(:tab)) %>"><%= link_to "About", about_path %></li>
         </ul>
       </nav>
     </div>

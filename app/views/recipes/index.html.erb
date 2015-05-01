@@ -1,14 +1,20 @@
 <% provide(:title, "Recipes") %>
+<% provide(:tab, "Recipes") %>
+<div class="page-header">
 <h1>Recipes</h1>
-<table>
+</div>
+<table class="table table-striped">
   <tr>
     <th>Title</th>
   </tr>
 
 <% @recipes.each do |recipe| %>
   <tr>
-    <td><%= recipe.title %></td>
+    <td><%= link_to recipe.title, recipe %></td>
   </tr>
 <% end %>
-
 </table>
+
+<p>
+  <%= link_to "New Recipe", new_recipe_path, class: "btn btn-primary" %>
+</p>

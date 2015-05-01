@@ -1,0 +1,7 @@
+<% provide(:tab, "Recipes") %>
+<% provide(:title,  @recipe.title) %>
+<h1 class="page-header"><%= @recipe.title %></h1>
+<blockquote>
+  <p><%= @recipe.description %></p>
+</blockquote>
+<%= link_to "Back", recipes_path %>
